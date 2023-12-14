@@ -1,6 +1,0 @@
-=====Mahasiswa ke-1=====
-Nama: faza
-NIM: 23
-Jurusan: ti
-Program Studi: o
-
