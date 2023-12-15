@@ -186,8 +186,7 @@ Percabangan dalam pemrograman C memungkinkan kontrol alur program berdasarkan ko
     for (int i = 1; i <= 5; i++) {
     for (int j = 1; j <= 3; j++) {
         // Blok program yang diulang
-    }
-}     ```
+    }```
    - **Fungsi:** Menempatkan satu atau lebih loop di dalam loop lainnya. Digunakan untuk melakukan iterasi melalui elemen dalam struktur data berdimensi atau untuk menghasilkan pola khusus.
 
 <h1>Job Sheet 7 : Struktur Data: Array</h1>
@@ -248,13 +247,11 @@ Array adalah alat yang kuat dalam bahasa pemrograman C yang memungkinkan pengelo
          {elemen1, elemen2},
          {elemen3, elemen4}
          // ...
-     };
-     ```
+     }; ```
    - **Akses Elemen:**
      ```c
      int matriks[2][3] = {{1, 2, 3}, {4, 5, 6}};
-     int nilai = matriks[1][2]; // Mengakses elemen baris kedua, kolom ketiga
-     ```
+     int nilai = matriks[1][2]; // Mengakses elemen baris kedua, kolom ketiga```
 
 7. **Penggunaan Pointer dengan Array:**
    - **Contoh:**
@@ -267,8 +264,13 @@ Array adalah alat yang kuat dalam bahasa pemrograman C yang memungkinkan pengelo
 <h1>Job Sheet 8 : Fungsi & Prosedur</h1>
 
 1. **Pengertian Fungsi:**
-   - **Definisi:** Fungsi adalah blok kode terorganisir yang dapat dipanggil oleh nama dan dapat digunakan untuk mengeksekusi tugas tertentu. Fungsi membantu membagi program menjadi bagian-bagian yang lebih kecil dan terkelola.
+   - **Definisi:** 
+   Fungsi adalah sub-program yang memiliki nama, parameter, dan nilai kembalian. Parameter adalah variabel yang digunakan untuk menerima input dari pemanggil fungsi. Nilai 
+   kembalian adalah hasil yang dikirimkan oleh fungsi ke pemanggil fungsi. Fungsi bisa dipanggil berkali-kali dari tempat yang berbeda dalam program.
 
+  Contoh fungsi yang paling sering kita buat dan panggil adalah fungsi main(). Fungsi ini adalah fungsi utama yang akan dieksekusi pertama kali oleh program C. Fungsi 
+  main() biasanya tidak memiliki parameter dan nilai kembalian, sehingga kita menggunakan tipe data void untuk menyatakannya.
+  
 2. **Penggunaan Fungsi:**
    - **Deklarasi dan Definisi:**
      ```c
@@ -282,36 +284,120 @@ Array adalah alat yang kuat dalam bahasa pemrograman C yang memungkinkan pengelo
      ```
 
 3. **Fungsi Rekursif:**
-   - **Definisi:** Fungsi yang memanggil dirinya sendiri selama eksekusi.
-   - **Contoh:** Faktorial
-     ```c
-     int faktorial(int n) {
-         if (n == 0 || n == 1)
-             return 1;
-         else
-             return n * faktorial(n - 1);
-     }
-     ```
+   Fungsi rekursif adalah fungsi yang memanggil dirinya sendiri di dalam tubuh fungsi. Fungsi rekursif biasanya digunakan untuk menyelesaikan masalah yang memiliki pola berulang atau bisa dibagi menjadi sub-masalah yang lebih kecil. Fungsi rekursif harus memiliki kondisi berhenti (base case) untuk menghindari looping tanpa akhir.
+
+Contoh fungsi rekursif adalah fungsi untuk menghitung faktorial dari sebuah bilangan. Faktorial dari n adalah hasil perkalian dari 1 sampai n. Rumusnya adalah:
+
+`n! = n x (n-1) x (n-2) x ... x 2 x 1`
+
+**Contoh:**
+
+`5! = 5 x 4 x 3 x 2 x 1 = 120`
+
+Fungsi rekursif untuk menghitung faktorial adalah:
+
+```c
+// fungsi untuk menghitung faktorial
+int faktorial(int n) {
+  // n adalah parameter berupa bilangan bulat positif
+  // kondisi berhenti jika n = 0 atau n = 1
+  if (n == 0 || n == 1) {
+    return 1;
+  }
+  // rekursi dengan memanggil fungsi faktorial dengan argumen n-1
+  else {
+    return n * faktorial(n-1);
+  }
+}
+```
 
 4. **Variabel Lokal & Global:**
-   - **Variabel Lokal:**
-     - Dideklarasikan di dalam fungsi dan hanya dapat diakses di dalam fungsi tersebut.
-     - Hidup selama eksekusi fungsi.
-   - **Variabel Global:**
-     - Dideklarasikan di luar fungsi dan dapat diakses oleh seluruh bagian program.
-     - Hidup sepanjang program.
+   -Variabel lokal dan variabel global adalah dua jenis variabel yang berbeda dalam cakupan dan ruang lingkupnya. Variabel lokal adalah variabel yang hanya bisa diakses dari dalam fungsi tempat variabel itu dideklarasikan. Variabel global adalah variabel yang bisa diakses dari semua fungsi dalam program.
+
+**Contoh:**
+
+```c
+#include <stdio.h>
+
+// variabel global
+int x = 10;
+
+// fungsi untuk menampilkan nilai x
+void tampil() {
+  // variabel lokal
+  int x = 20;
+  // mencetak nilai x lokal
+  printf("Nilai x lokal adalah %d\n", x);
+}
+
+void main() {
+  // memanggil fungsi tampil
+  tampil();
+  // mencetak nilai x global
+  printf("Nilai x global adalah %d\n", x);
+}
+```
+
+Hasil:
+
+```
+Nilai x lokal adalah 20
+Nilai x global adalah 10
+```
 
 5. **Pass by Value:**
-   - **Definisi:** Metode melewatkan argumen ke fungsi dengan menyalin nilainya.
-   - **Karakteristik:**
-     - Variabel asli tidak terpengaruh oleh perubahan di dalam fungsi.
-     - Efisiensi memori karena nilai disalin.
-   - **Contoh:**
-     ```c
-     void fungsi(int x) {
-         x = x + 10;
-     }
-     ```
+   Pass by value dan pass by reference adalah dua cara untuk memberikan nilai ke parameter fungsi. Pass by value berarti kita memberikan nilai langsung ke parameter, sehingga parameter akan memiliki salinan dari nilai tersebut. Perubahan yang terjadi pada parameter tidak akan mempengaruhi nilai aslinya.
+
+Pass by reference berarti kita memberikan alamat memori dari nilai ke parameter, sehingga parameter akan menunjuk ke lokasi yang sama dengan nilai tersebut. Perubahan yang terjadi pada parameter akan mempengaruhi nilai aslinya.
+
+**Contoh:**
+
+```c
+#include <stdio.h>
+
+// fungsi untuk menukar nilai dua variabel dengan pass by value
+void tukar_value(int a, int b) {
+  // a dan b adalah parameter yang menerima salinan dari nilai variabel
+  // membuat variabel sementara untuk menyimpan nilai a
+  int temp = a;
+  // menukar nilai a dengan b
+  a = b;
+  // menukar nilai b dengan temp
+  b = temp;
+  // mencetak nilai a dan b setelah ditukar
+  printf("Nilai a dan b di dalam fungsi tukar_value adalah %d dan %d\n", a, b);
+}
+
+// fungsi untuk menukar nilai dua variabel dengan pass by reference
+void tukar_reference(int *a, int *b) {
+  // a dan b adalah parameter yang menerima alamat memori dari variabel
+  // membuat variabel sementara untuk menyimpan nilai a
+  int temp = *a;
+  // menukar nilai a dengan b
+  *a = *b;
+  // menukar nilai b dengan temp
+  *b = temp;
+  // mencetak nilai a dan b setelah ditukar
+  printf("Nilai a dan b di dalam fungsi tukar_reference adalah %d dan %d\n", *a, *b);
+}
+
+void main() {
+  // membuat variabel x dan y
+  int x = 10;
+  int y = 20;
+  // mencetak nilai x dan y sebelum ditukar
+  printf("Nilai x dan y sebelum ditukar adalah %d dan %d\n", x, y);
+  // memanggil fungsi tukar_value dengan argumen x dan y
+  tukar_value(x, y);
+  // mencetak nilai x dan y setelah ditukar dengan pass by value
+  printf("Nilai x dan y setelah ditukar dengan pass by value adalah %d dan %d\n", x, y);
+  // memanggil fungsi tukar_reference dengan argumen alamat memori dari x dan y
+  tukar_reference(&x, &y);
+  // mencetak nilai x dan y setelah ditukar dengan pass by reference
+  printf("Nilai x dan y setelah ditukar dengan pass by reference adalah %d dan %d\n", x, y);
+}
+```
+
 
 6. **Pass by Reference:**
    - **Definisi:** Metode melewatkan argumen ke fungsi dengan memberikan referensi atau alamat memorinya.
@@ -328,192 +414,85 @@ Array adalah alat yang kuat dalam bahasa pemrograman C yang memungkinkan pengelo
 <h1>Job Sheet 9 : Pointer</h1>
 
 1. **Pengertian Pointer:**
-   - **Definisi:** Pointer adalah variabel yang berisi alamat memori. Mereka digunakan untuk menyimpan alamat memori dari variabel atau fungsi.
+   - **Definisi:** Pointer adalah variabel yang menyimpan alamat memori dari variabel lain.Dapat digunakan untuk mengakses variabel secara tidak langsung.
 
-2. **Penggunaan Pointer:**
-   - **Deklarasi dan Inisialisasi:**
-     ```c
-     tipe_data *nama_pointer;
-     ```
-   - **Menggunakan Operator Address-of (&) dan Dereference (*):**
-     ```c
-     int angka = 10;
-     int *pointer_angka = &angka; // Pointer menyimpan alamat memori
-     int nilai = *pointer_angka; // Mengakses nilai dengan dereference
-     ```
+2. **Deklarasi Pointer:**
+   Deklarasi pointer menggunakan bentuk umum tipe_data *nama_pointer;.tipe_data adalah tipe data dari variabel yang akan diakses oleh pointer.nama_pointer adalah nama pointer.
 
-3. **Pointer untuk Pass by Reference:**
-   - **Menggunakan Pointer sebagai Parameter Fungsi:**
-     ```c
-     void tambahSepuluh(int *x) {
-         *x = *x + 10;
-     }
-     // Pemanggilan fungsi
-     int angka = 5;
-     tambahSepuluh(&angka);
-     ```
-   - **Fungsi di atas akan mengubah nilai variabel `angka` karena melewatkan alamat memori ke fungsi.**
+3. **Nilai Pointer:**
+Nilai pointer adalah alamat memori dari variabel yang diakses oleh pointer.Nilai pointer diakses menggunakan operator *, misalnya: printf("%p\n", angka).
+  
+4. **Mengakses Variabel Melalui Pointer:**
+  Variabel dapat diakses secara tidak langsung melalui pointer dengan menggunakan operator *.Contoh: printf("%d\n", *angka); // 10.
 
-4. **Pointer untuk Mengakses Array:**
-   - **Deklarasi Pointer untuk Array:**
-     ```c
-     int angka[] = {1, 2, 3, 4, 5};
-     int *pointer_angka = angka; // Pointer menyimpan alamat elemen pertama
-     ```
-   - **Menggunakan Pointer untuk Mengakses Elemen Array:**
-     ```c
-     for (int i = 0; i < 5; i++) {
-         printf("%d ", *(pointer_angka + i)); // Mengakses elemen dengan pointer
-     }
-     ```
+5. **Operasi Pointer:**
+    Pointer dapat dioperasikan dengan operator matematika, seperti penjumlahan, pengurangan, perkalian, dan pembagian.Contoh: *angka += 10; untuk menambahkan nilai 10 ke variabel melalui pointer
+
+6. **Pointer Null:**
+Pointer null adalah pointer yang tidak menyimpan alamat memori dari variabel apa pun.Dapat digunakan untuk menandakan bahwa pointer tersebut tidak valid.Deklarasi: int *angka = NULL;.
 
 <h1>Job Sheet 10 : Enumerasi & Structure</h1>
 
-1. **Pengertian Enum:**
-   - **Definisi:** Enum (Enumerated Types) adalah tipe data khusus yang memungkinkan programmer untuk mendefinisikan kumpulan konstanta bernama yang memiliki nilai-nilai terkait.
+**Enumerasi:**
 
-2. **Pengertian Structure:**
-   - **Definisi:** Structure adalah tipe data yang memungkinkan penyimpanan berbagai tipe data yang berbeda dalam satu unit, yang disebut sebagai "struktur."
+Enumerasi adalah tipe data untuk mendefinisikan daftar nilai-nilai konstan.Digunakan untuk membuat program lebih ringkas dan mudah dibaca.
+**Deklarasi Enumerasi:**
+Deklarasi enumerasi menggunakan bentuk umum enum nama_enumerasi { konstanta_1, konstanta_2, ... };.nama_enumerasi adalah nama enumerasi, dan konstanta_1, konstanta_2, ... adalah daftar nilai konstan.
+**Structure:**
+Structure adalah tipe data untuk mendefinisikan kumpulan data terkait.Digunakan untuk membuat program lebih ringkas dan memudahkan pemahaman.Deklarasi Structure:
+Deklarasi structure menggunakan bentuk umum struct nama_structure { tipe_data_1 nama_variabel_1; tipe_data_2 nama_variabel_2; ... };.
+nama_structure adalah nama structure, tipe_data_1, tipe_data_2, ... adalah tipe data variabel dalam structure, dan nama_variabel_1, nama_variabel_2, ... adalah nama variabel dalam structure.
 
-3. **Penggunaan Enum:**
-   - **Deklarasi dan Penggunaan:**
-     ```c
-     enum Hari {MINGGU, SENIN, SELASA, RABU, KAMIS, JUMAT, SABTU};
-     enum Hari hari_ini = SELASA;
-     ```
-
-4. **Penggunaan Struct:**
-   - **Deklarasi dan Penggunaan:**
-     ```c
-     struct Mahasiswa {
-         char nama[50];
-         int usia;
-         float ipk;
-     };
-     struct Mahasiswa mhs1;
-     ```
-
-5. **Penggunaan typedef pada Struct:**
-   - **Deklarasi dengan typedef:**
-     ```c
-     typedef struct {
-         char nama[50];
-         int usia;
-         float ipk;
-     } Mahasiswa;
-     Mahasiswa mhs1;
-     ```
-
-6. **Struct Bersarang:**
-   - **Contoh Struct Bersarang:**
-     ```c
-     struct Alamat {
-         char jalan[50];
-         char kota[30];
-     };
-
-     struct Mahasiswa {
-         char nama[50];
-         int usia;
-         struct Alamat alamat;
-     };
-     ```
-
-7. **Passing Struct ke dalam Fungsi:**
-   - **Menggunakan Parameter:**
-     ```c
-     void tampilkanMahasiswa(struct Mahasiswa mhs) {
-         printf("Nama: %s\nUsia: %d\n", mhs.nama, mhs.usia);
-     }
-     // Pemanggilan fungsi
-     tampilkanMahasiswa(mhs1);
-     ```
-   - **Menggunakan Pointer:**
-     ```c
-     void updateUsia(struct Mahasiswa *mhs, int usia_baru) {
-         mhs->usia = usia_baru;
-     }
-     // Pemanggilan fungsi
-     updateUsia(&mhs1, 22);
-     ```
+**Akses Elemen Structure:**
+Elemen structure dapat diakses menggunakan operator ..Contoh: printf("%s\n", mahasiswa.nama); untuk mencetak nama variabel nama dalam structure mahasiswa.Materi ini memberikan pemahaman tentang penggunaan enumerasi dan structure dalam pemrograman. Enumerasi berguna untuk mendefinisikan konstan, sementara structure membantu mengorganisir data terkait dalam program.
 
 <h1>Job Sheet 11 : File Handling in C</h1>
 
-File handling adalah kemampuan untuk membaca, menulis, dan memanipulasi file di dalam program bahasa C. File handling dapat digunakan untuk berbagai keperluan, antara lain:
+**1. Membaca File dengan C:**
 
-* **Menyimpan data**
-* **Membaca data**
-* **Mengedit data**
-* **Menghapus data**
-* **Membuat file baru**
+fopen: Fungsi untuk membuka file. Contoh: FILE *file = fopen("nama_file.txt", "r");.
+Pengecekan Ketersediaan File: Gunakan if (file != NULL) untuk memastikan file berhasil dibuka.
+Membaca Data dari File: Gunakan fgets untuk membaca data dari file dalam bentuk baris.
 
-**Fungsi-fungsi File Handling dalam Bahasa C**
+**2. Menulis dalam File dengan C:**
 
-Berikut adalah beberapa fungsi file handling yang sering digunakan dalam bahasa C:
+fopen: Juga digunakan untuk membuka file, namun dengan mode "w" atau "a" untuk menulis atau menambahkan pada akhir file.
+Mode fopen() dapat bervariasi untuk memperlakukan file berbeda.
+Penjelasan variasi mode pada fopen() dalam memperlakukan file.
+Menulis Data ke dalam File: Gunakan fprintf untuk menulis data ke dalam file.
+Menutup File: Gunakan fclose untuk menutup file setelah selesai membaca atau menulis.
 
-* **fopen()** : digunakan untuk membuka file
-* **fclose()** : digunakan untuk menutup file
-* **fread()** : digunakan untuk membaca data dari file
-* **fwrite()** : digunakan untuk menulis data ke file
-* **fseek()** : digunakan untuk memindahkan posisi pointer di file
-* **ftell()** : digunakan untuk mendapatkan posisi pointer di file
+**Contoh Program:**
 
-**Contoh Penggunaan File Handling**
-
-Berikut adalah contoh penggunaan file handling untuk menulis data ke file:
-
-```c
 #include <stdio.h>
 
 int main() {
-  // membuka file untuk ditulis
-  FILE *file = fopen("data.txt", "w");
+    // Membaca File
+    FILE *bacaFile = fopen("baca_file.txt", "r");
+    if (bacaFile != NULL) {
+        char buffer[100];
+        while (fgets(buffer, sizeof(buffer), bacaFile) != NULL) {
+            printf("%s", buffer);
+        }
+        fclose(bacaFile);
+    } else {
+        printf("Gagal membaca file\n");
+    }
 
-  // menulis data ke file
-  fprintf(file, "Ini adalah data yang akan ditulis ke file.\n");
+    // Menulis ke File
+    FILE *tulisFile = fopen("tulis_file.txt", "w");
+    if (tulisFile != NULL) {
+        fprintf(tulisFile, "Hello, World!\n");
+        fclose(tulisFile);
+    } else {
+        printf("Gagal menulis ke file\n");
+    }
 
-  // menutup file
-  fclose(file);
-
-  return 0;
+    return 0;
 }
-```
+Program di atas menunjukkan cara membaca isi file ("baca_file.txt") dan mencetaknya ke layar, serta menulis teks ke file baru ("tulis_file.txt"). Pemeriksaan ketersediaan file sebelum membaca atau menulis sangat penting.
 
-Output:
 
-```
-Ini adalah data yang akan ditulis ke file.
-```
 
-Berikut adalah contoh penggunaan file handling untuk membaca data dari file:
 
-```c
-#include <stdio.h>
 
-int main() {
-  // membuka file untuk dibaca
-  FILE *file = fopen("data.txt", "r");
-
-  // membaca data dari file
-  char buffer[100];
-  fgets(buffer, sizeof(buffer), file);
-
-  // menutup file
-  fclose(file);
-
-  // menampilkan data yang dibaca
-  printf("Data yang dibaca dari file: %s\n", buffer);
-
-  return 0;
-}
-```
-
-Output:
-
-```
-Data yang dibaca dari file: Ini adalah data yang akan ditulis ke file.
-```
-
-**Kesimpulan**
-
-File handling adalah kemampuan yang penting dalam bahasa C. Dengan menggunakan fungsi-fungsi seperti fopen(), fclose(), fread(), dan fwrite(), program dapat membuka, menutup, membaca, dan menulis data ke dalam file. Contoh-contoh di atas menunjukkan bagaimana kita dapat dengan mudah membuat dan mengakses file, serta melakukan operasi dasar seperti penulisan dan pembacaan data. File handling sangat berguna untuk menyimpan dan memanipulasi informasi, sehingga memungkinkan program C untuk berinteraksi dengan data yang disimpan di dalam file.
