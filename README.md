@@ -545,4 +545,4 @@ Data yang dibaca dari file: Ini adalah data yang akan ditulis ke file.
 
 **Kesimpulan**
 
-File handling adalah kemampuan yang penting dalam bahasa C. File handling dapat digunakan untuk berbagai keperluan, antara lain untuk menyimpan, membaca, dan memanipulasi file.
+File handling adalah kemampuan yang penting dalam bahasa C. Dengan menggunakan fungsi-fungsi seperti fopen(), fclose(), fread(), dan fwrite(), program dapat membuka, menutup, membaca, dan menulis data ke dalam file. Contoh-contoh di atas menunjukkan bagaimana kita dapat dengan mudah membuat dan mengakses file, serta melakukan operasi dasar seperti penulisan dan pembacaan data. File handling sangat berguna untuk menyimpan dan memanipulasi informasi, sehingga memungkinkan program C untuk berinteraksi dengan data yang disimpan di dalam file.
