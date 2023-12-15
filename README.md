@@ -40,80 +40,55 @@ Dalam setiap bahasa pemrograman memiliki sintaks tersendiri yang dapat diartikan
 <h1>Job Sheet 3 : Variabel, Konstanta & Tipe Data</h1>
 
 1. **Variabel:**
-   - **Definisi:** Variabel digunakan untuk menyimpan dan memanipulasi data dalam program.
-   - **Pendeklarasian:** Variabel perlu dideklarasikan sebelum digunakan dengan menyertakan tipe data (int, float, char, dll.) dan nama variabel.
-   - **Contoh:**
-     ```c
-     int angka; // deklarasi variabel
-     angka = 10; // inisialisasi variabel
-     ```
+   - **Variabel adalah tempat penyimpanan nilai dalam pemrograman.** 
+   - **Tipe data menentukan jenis nilai yang disimpan dalam variabel.**
+   - **Contoh deklarasi variabel dalam bahasa pemrograman C: int tinggi; atau int berat = 49;.**
+    
 
-2. **Konstanta:**
-   - **Definisi:** Konstanta adalah nilai yang tetap dan tidak dapat diubah selama eksekusi program.
-   - **Pendeklarasian:** Dideklarasikan dengan menggunakan kata kunci `const` sebelum tipe data.
-   - **Contoh:**
-     ```c
-     const float PI = 3.14; // deklarasi konstanta
-     ```
+2. **Aturan Penulisan Variabel pada C:**
+   - **Nama variabel tidak boleh diawali dengan simbol atau angka.** 
+   - **Tidak boleh menggunakan kata kunci bahasa C sebagai nama variabel.** 
+   - **Penulisan nama variabel bersifat case-sensitive.**
+   - **Disarankan menggunakan underscore untuk variabel dengan dua suku kata.**
 
 3. **Tipe Data:**
-   - **Tipe Data Dasar:**
-     - `int`: Bilangan bulat.
-     - `float`: Bilangan desimal (floating-point).
-     - `double`: Bilangan desimal dengan presisi ganda.
-     - `char`: Karakter.
-   - **Tipe Data Turunan:**
-     - `short`, `long`: Modifikasi untuk tipe data `int`.
-     - `unsigned`: Hanya bilangan positif, tanpa tanda.
-   - **Contoh:**
-     ```c
-     int umur = 25;
-     float nilai = 89.5;
-     char huruf = 'A';
-     ```
+   - **Tipe data adalah jenis data yang mengelompokkan cara data diolah.**
+   - **Tipe data dasar dalam C mencakup Char, Integer, Float, dan Double.**
+   - **Penggunaan format %f dan %.2f untuk mencetak tipe data Float dan Double.**
+   - **Tipe data Void digunakan untuk menyatakan tidak ada data.**
+     
+4. **Konversi Tipe Data:**
+   - **Konversi tipe data adalah proses mengubah tipe data menjadi tipe yang lain.** 
+   - **Contoh konversi tipe data dalam C: float a = (float)10 / 4;.** 
 
-4. **Fungsi:**
-   - **Definisi:** Fungsi adalah blok kode yang dapat dipanggil untuk menjalankan tugas tertentu.
-   - **Pendeklarasian:** Terdiri dari tipe data pengembalian, nama fungsi, dan parameter (jika ada).
-   - **Contoh:**
-     ```c
-     int tambah(int a, int b) {
-         return a + b;
-     }
-     ```
-   - **Pemanggilan Fungsi:**
-     ```c
-     int hasil = tambah(4, 5);
-     ```
-
-5. **Variabel Lokal dan Global:**
-   - **Variabel Lokal:** Dideklarasikan di dalam fungsi dan hanya dapat diakses di dalam fungsi tersebut.
-   - **Variabel Global:** Dideklarasikan di luar fungsi dan dapat diakses oleh seluruh bagian program.
+5. **Konstanta:**
+   - **Konstanta adalah nilai tetap yang tidak dapat diubah.** 
+   - **Dapat dibuat dengan menggunakan #define atau const.**
+   - **Penulisan huruf kapital disarankan untuk nama konstanta.**
 
 <h1>Job Sheet 4 : Operator</h1>
 
 1. **Operator Aritmatika:**
-   - **Contoh:** `+, -, *, /, %`
-   - **Fungsi:** Melakukan operasi matematika pada dua operand. `+` untuk penambahan, `-` untuk pengurangan, `*` untuk perkalian, `/` untuk pembagian, dan `%` untuk modulo.
+   - **Contoh**Penjumlahan (+)Pengurangan (-)Perkalian (*)Pembagian (/)Sisa Bagi (%)
+   - **Fungsi:** Digunakan untuk operasi matematika.
 
 2. **Operator Penugasan:**
-   - **Contoh:** `=, +=, -=, *=, /=, %=`
-   - **Fungsi:** Memberikan nilai pada variabel. Misalnya, `+=` menambah nilai variabel dengan nilai yang diberikan.
-
+   - **Contoh:** Pengisian Nilai (=)Pengisian dan Penambahan (+=)Pengisian dan Pengurangan (-=)Pengisian dan Perkalian (*=)Pengisian dan Pembagian (/=)Pengisian dan Sisa bagi (%=)
+   - **Fungsi:** Digunakan untuk memberikan nilai atau tugas pada variabel.
+   
 3. **Operator Pembanding:**
-   - **Contoh:** `==, !=, <, >, <=, >=`
-   - **Fungsi:** Membandingkan dua nilai atau ekspresi dan menghasilkan nilai kebenaran (`true` atau `false`).
+   - **Contoh:** LLogika AND (&&)Logika OR (||)Negasi/kebalikan (!)
+   - **Fungsi:** Membandingkan dua nilai atau variabel.
 
 4. **Operator Logika:**
    - **Contoh:** `&& (AND), || (OR), ! (NOT)`
-   - **Fungsi:** Digunakan untuk menggabungkan atau memanipulasi kondisi logika. `&&` menghasilkan `true` jika kedua kondisi benar, `||` menghasilkan `true` jika salah satu kondisi benar, dan `!` menghasilkan kebalikan dari kondisi.
+   - **Fungsi:**  Digunakan untuk operasi logika.
 
 5. **Operator Bitwise:**
-   - **Contoh:** `&, |, ^, ~, <<, >>`
-   - **Fungsi:** Melakukan operasi bit pada nilai. `&` untuk AND bit, `|` untuk OR bit, `^` untuk XOR bit, `~` untuk NOT bit, `<<` untuk shift kiri bit, dan `>>` untuk shift kanan bit.
-
-6. **Operator Kondisional (Ternary):**
-   - **Contoh:** `condition ? expression1 : expression2`
+   - **Contoh:** Bitwise AND (&)Bitwise OR (|)Bitwise XOR (^)Bitwise NOT (~)Bitwise Left Shift (<<)Bitwise Right Shift (>>)
+   - **Fungsi:** Operasi berdasarkan bit (biner) dari suatu nilai.
+ 6. **Operator Lain-lain**
+   - **Contoh:** Alamat memori (&)Pointer (*)Ternary (?:)Increment (++)Decrement (--)Lainnya (seperti operator untuk manipulasi pointer dan alamat memori).
    - **Fungsi:** Menyediakan cara singkat untuk menulis ekspresi kondisional. Jika kondisi benar, ekspresi1 dievaluasi; jika salah, ekspresi2 dievaluasi.
 
 <h1>Job Sheet 5 : Flow Control: Decision Making</h1>
@@ -121,48 +96,47 @@ Dalam setiap bahasa pemrograman memiliki sintaks tersendiri yang dapat diartikan
 Percabangan dalam pemrograman C memungkinkan kontrol alur program berdasarkan kondisi tertentu. `if` dan `if else` menyediakan percabangan kondisional, `switch case` memberikan alternatif berdasarkan nilai ekspresi, operator ternary memberikan cara singkat untuk menyatakan kondisi, dan percabangan bersarang memungkinkan keputusan yang lebih kompleks.
 
 1. **Fungsi If:**
-   - **Struktur:**
+   - **Contoh**
      ```c
-     if (kondisi) {
-         // blok kode yang dijalankan jika kondisi benar
-     }
-     ```
-   - **Fungsi:** Menjalankan blok kode jika kondisi yang diberikan bernilai `true`. Jika kondisi `false`, blok kode diabaikan.
+     if (total_belanja > 100000) {
+    printf("Selamat, Anda dapat bonus diskon!");
+}
+    - **Percabangan dengan satu blok pilihan saat kondisi benar.Blok program diapit oleh '{}'.**
+  
 
 2. **Fungsi If Else:**
-   - **Struktur:**
+   - **Contoh**
      ```c
-     if (kondisi) {
-         // blok kode yang dijalankan jika kondisi benar
-     } else {
-         // blok kode yang dijalankan jika kondisi salah
-     }
-     ```
-   - **Fungsi:** Memberikan dua pilihan. Jika kondisi benar, jalankan blok pertama; jika salah, jalankan blok kedua.
+     if (password_benar) {
+    printf("Selamat datang bos!");
+} else {
+    printf("Password salah, coba lagi!");
+}  ```
+   - **Percabangan dengan dua blok pilihan (benar dan salah).Pesan luar blok tetap ditampilkan.** 
 
 3. **Switch Case:**
-   - **Struktur:**
+   - **Contoh**
      ```c
-     switch (ekspresi) {
-         case nilai1:
-             // blok kode
-             break;
-         case nilai2:
-             // blok kode
-             break;
-         // ...
-         default:
-             // blok kode default (opsional)
-     }
-     ```
-   - **Fungsi:** Menyediakan alternatif berdasarkan nilai ekspresi. Eksekusi blok kode yang sesuai dengan nilai yang cocok.
+   switch (grade) {
+    case 'A':
+       // ...
+       break;
+    case 'B':
+    case 'E':
+       // ...
+       break;
+    // ...
+    default:
+       // ...
+}```
+   - **Alternatif untuk percabangan if/else if.Banyak blok kode (case) di dalam blok switch.Menggunakan break untuk menghentikan pengecekan.**
 
 4. **Operator Ternary:**
    - **Struktur:**
      ```c
      (kondisi) ? nilai1 : nilai2;
      ```
-   - **Fungsi:** Menyediakan cara singkat untuk menulis ekspresi kondisional. Jika kondisi benar, hasilnya adalah nilai1; jika salah, hasilnya adalah nilai2.
+   - **Bentuk singkat dari if/else.Menggantikan kondisi if/else dengan operator ternary.** 
 
 5. **Percabangan Bersarang (Nested):**
    - **Contoh:**
@@ -177,46 +151,43 @@ Percabangan dalam pemrograman C memungkinkan kontrol alur program berdasarkan ko
          // blok kode
      }
      ```
-   - **Fungsi:** Menempatkan percabangan di dalam percabangan. Digunakan ketika keputusan lebih kompleks dan bergantung pada beberapa kondisi.
+   - **Menempatkan percabangan di dalam percabangan.Meningkatkan kompleksitas logika program.** 
 
 <h1>Job Sheet 6 : Flow Control: Loop (Perulangan)</h1>
 
 1. **Perulangan For:**
-   - **Struktur:**
-     ```c
-     for (inisialisasi; kondisi; iterasi) {
-         // blok kode yang diulang
-     }
+   - **Contoh**
+     ``for (int i = 0; i < 10; i++) {
+    // Blok program yang diulang
+}
+
      ```
    - **Fungsi:** Mengeksekusi blok kode dalam loop selama kondisi terpenuhi. Inisialisasi dilakukan hanya sekali, kondisi dievaluasi sebelum setiap iterasi, dan iterasi dilakukan setelah setiap iterasi.
 
 2. **Perulangan While:**
-   - **Struktur:**
+   - **Contoh**
      ```c
-     while (kondisi) {
-         // blok kode yang diulang
-     }
-     ```
+    while (ulangi == 'y') {
+    // Blok program yang diulang selama ulangi == 'y'
+} ```
    - **Fungsi:** Mengeksekusi blok kode dalam loop selama kondisi terpenuhi. Kondisi dievaluasi sebelum setiap iterasi.
 
 3. **Perulangan Do While:**
-   - **Struktur:**
+   - **Contoh**
      ```c
      do {
-         // blok kode yang diulang
-     } while (kondisi);
-     ```
+    // Blok program yang diulang
+} while (ulangi == 'y');```
    - **Fungsi:** Mirip dengan `while`, tetapi blok kode dieksekusi setidaknya satu kali karena kondisi dievaluasi setelah eksekusi.
 
 4. **Perulangan Bersarang (Nested Loop):**
    - **Contoh:**
      ```c
-     for (int i = 1; i <= 5; i++) {
-         for (int j = 1; j <= 3; j++) {
-             // blok kode dalam loop bersarang
-         }
-     }
-     ```
+    for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 3; j++) {
+        // Blok program yang diulang
+    }
+}     ```
    - **Fungsi:** Menempatkan satu atau lebih loop di dalam loop lainnya. Digunakan untuk melakukan iterasi melalui elemen dalam struktur data berdimensi atau untuk menghasilkan pola khusus.
 
 <h1>Job Sheet 7 : Struktur Data: Array</h1>
