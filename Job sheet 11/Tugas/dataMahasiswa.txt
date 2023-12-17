@@ -1,0 +1,18 @@
+=====Mahasiswa ke-1=====
+Nama: faza
+NIM: 23
+Jurusan: ti
+Program Studi: o
+
+=====Mahasiswa ke-1=====
+Nama: Faza
+NIM: 23343038
+Jurusan: Teknik
+Program Studi: TI
+
+=====Mahasiswa ke-2=====
+Nama: Firman
+NIM: 23343041
+Jurusan: Teknik
+Program Studi: TI
+
